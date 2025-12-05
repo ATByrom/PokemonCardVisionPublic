@@ -1,0 +1,32 @@
+experiment_name: pokemon_real_v1
+project_root: PokemonCardVision
+
+model:
+  backbone: vit_b_16
+  pretrained_weights: IMAGENET1K_SWAG_E2E_V1
+  img_size: 384
+  num_classes: 4  # ['honchkrow_v_088_172', 'kyogre_v_037_159', 'rayquaza_v_100_159', 'zamazenta_v_098_159']
+
+training:
+  batch_size: 16
+  epochs: 7
+  optimizer: AdamW
+  learning_rate: 3.0e-5
+  weight_decay: 0.01
+  loss: CrossEntropyLoss
+  device: "cuda"  
+
+data:
+  labels_csv: data/pokemon_photos/labels.csv
+  raw_dir: data/pokemon_photos/raw
+  split_strategy: stratified_80_20
+  drop_label: "skip"
+
+outputs:
+  metrics_csv: data/experiments/pokemon_real_vit_metrics.csv
+  best_checkpoint: data/experiments/pokemon_real_vit_best.pt
+
+thresholds:
+  classifier_unknown_conf: 0.90
+  prototype_min_sim: 0.70
+  retrieval_min_sim: 0.55

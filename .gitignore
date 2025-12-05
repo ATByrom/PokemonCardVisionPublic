@@ -1,0 +1,22 @@
+# Python stuff 
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual env
+.venv/
+
+# Data and checkpoints (we'll recreate/download in Colab)
+data/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS/editor trash
+.DS_Store
+Thumbs.db

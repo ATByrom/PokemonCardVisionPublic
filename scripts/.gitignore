@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+*.pt
+
+# Envs
+.env
+.venv
+venv/
+env/
+.psa-grader/
+
+# Data & experiments
+data/experiments/
+data/pokemon_photos/raw/
+data/pokemon_photos/test_manual/
+data/pokemon_tcg_hf/
+data/pokemon_web/
+
+# Jupyter
+.ipynb_checkpoints/
